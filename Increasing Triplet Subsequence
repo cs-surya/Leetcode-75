@@ -1,0 +1,18 @@
+class Solution {
+    public boolean increasingTriplet(int[] nums) {
+            int min = Integer.MAX_VALUE; // Initialize min to a large value.
+        int middle = Integer.MAX_VALUE; // Initialize middle to a large value.
+
+        for (int num : nums) {
+            if (num <= min) {
+                min = num; // Update the minimum.
+            } else if (num <= middle) {
+                middle = num; // Update the middle element.
+            } else {
+                return true; // Found a valid triplet.
+            }
+        }
+
+        return false;
+    }
+}
