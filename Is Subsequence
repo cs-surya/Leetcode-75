@@ -1,0 +1,22 @@
+Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+
+A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
+
+
+public boolean isSubsequence(String s, String t) {
+    int sPointer = 0; // Pointer for string s
+    int tPointer = 0; // Pointer for string t
+
+    // Iterate through both strings
+    while (sPointer < s.length() && tPointer < t.length()) {
+        if (s.charAt(sPointer) == t.charAt(tPointer)) {
+            // If the characters match, move the pointer for string s to the next character.
+            sPointer++;
+        }
+        // Always move the pointer for string t to the next character.
+        tPointer++;
+    }
+
+    // If sPointer reached the end of string s, it means s is a subsequence of t.
+    return sPointer == s.length();
+}
